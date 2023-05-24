@@ -22,5 +22,3 @@ export default function Home() {
     </div>
   )
 }
-
-// <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">Build your component library.</h1>
