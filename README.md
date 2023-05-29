@@ -5,7 +5,7 @@ This template is a customized version of [shadcn/next-template](https://github.c
 ## Usage
 
 ```bash
-npx create-next-app -e https://github.com/SameerJadav/next-template
+pnpx create-next-app -e https://github.com/SameerJadav/next-template
 ```
 
 ## Features
