@@ -1,14 +1,7 @@
 import { Metadata } from "next"
 import { Inter } from "next/font/google"
-
 import { siteConfig } from "~/config/site"
-
 import { cn } from "~/lib/utils"
-
-import SiteFooter from "~/components/site-footer"
-import { SiteHeader } from "~/components/site-header"
-import { ThemeProvider } from "~/components/theme-provider"
-
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -19,23 +12,17 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "TypeScript",
-  ],
+  keywords: ["Next.js", "TypeScript", "Next.js Template"],
   authors: [
     {
       name: siteConfig.author,
-      url: "https://sameerjadav.me",
+      url: siteConfig.authorUrl,
     },
   ],
   creator: siteConfig.author,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#161618" },
+    { media: "(prefers-color-scheme: dark)", color: "#161618" },
   ],
   openGraph: {
     type: "website",
@@ -58,9 +45,13 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@SameerJadav_",
+    creator: siteConfig.twitterId,
+    site: siteConfig.twitterId,
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
+  alternates: {
+    canonical: siteConfig.url,
+  },
 }
 
 export default function RootLayout({
@@ -69,18 +60,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "relative flex min-h-screen flex-col antialiased",
-          inter.className
-        )}
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={cn("flex flex-col antialiased", inter.className)}>
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   )

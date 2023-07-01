@@ -1,6 +1,7 @@
 {
   "name": "Next Template",
   "short_name": "",
+  "description": "Minimal Next.js template.",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone"

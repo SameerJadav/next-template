@@ -1,12 +1,10 @@
-import { MetadataRoute } from "next"
-
 import { siteConfig } from "~/config/site"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap() {
   return [
     {
       url: siteConfig.url,
-      lastModified: new Date(),
+      lastModified: new Date().toISOString().split("T")[0],
     },
   ]
 }

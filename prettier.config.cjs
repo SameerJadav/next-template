@@ -20,7 +20,7 @@ module.exports = {
     "^~/app/(.*)$",
     "^[./]",
   ],
-  importOrderSeparation: true,
+  importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   importOrderBuiltinModulesToTop: true,
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],

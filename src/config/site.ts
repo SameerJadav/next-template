@@ -1,14 +1,16 @@
 export const siteConfig = {
   name: "Next Template",
-  url: "https://react-three-learn.sameerjadav.me",
-  ogImage: "https://react-three-learn.sameerjadav.me/og.png",
-  description:
-    "This template is a customized version of shadcn/next-template, tailored to meet my specific requirements. It incorporates Next.js 13, TailwindCSS, and adheres to best practices for web development. Feel free to use this template as a starting point for your next project if you find its setup appealing and suitable for your needs.",
+  description: "Minimal Next.js template.",
+  url: "https://next-template-livid.vercel.app",
+  ogImage: "https://og.sameerjadav.me/og?title=Next%20Template",
   author: "Sameer Jadav",
+  authorUrl: "https://sameerjadav.me",
+  twitterId: "@SameerJadav_",
   links: {
     twitter: "https://twitter.com/SameerJadav_",
-    github: "https://github.com/SameerJadav/next-template",
+    github: "https://github.com/SameerJadav",
+    linkedin: "https://www.linkedin.com/in/sameer-jadav",
+    instagram: "https://www.instagram.com/sameerjadav._",
+    mail: "mailto:sameerjdav001@gmail.com",
   },
 }
-
-export type SiteConfig = typeof siteConfig
