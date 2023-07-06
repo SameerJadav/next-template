@@ -1,10 +1,6 @@
-import { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { siteConfig } from "~/config/site"
-import { cn } from "~/lib/utils"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import { type Metadata } from "next"
+import { siteConfig } from "~/config"
+import "~/styles/globals.css"
 
 export const metadata: Metadata = {
   title: {
@@ -12,14 +8,15 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["Next.js", "TypeScript", "Next.js Template"],
+  keywords: ["Next.js", "TypeScript", "Tailwind CSS"],
   authors: [
     {
       name: siteConfig.author,
-      url: siteConfig.authorUrl,
+      url: siteConfig.url,
     },
   ],
   creator: siteConfig.author,
+  generator: "Next.js",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#161618" },
     { media: "(prefers-color-scheme: dark)", color: "#161618" },
@@ -44,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [`${siteConfig.ogImage}`],
     creator: siteConfig.twitterId,
     site: siteConfig.twitterId,
   },
@@ -61,8 +58,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn("flex flex-col antialiased", inter.className)}>
-        <main className="flex-1">{children}</main>
+      <body>
+        <main>{children}</main>
       </body>
     </html>
   )

@@ -1,5 +1,6 @@
-import { siteConfig } from "~/config/site"
+import { siteConfig } from "~/config"
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export default async function sitemap() {
   return [
     {
